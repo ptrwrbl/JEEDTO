@@ -22,4 +22,7 @@ public class Student {
     @JoinColumn(name="address_id")
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+
+    @Lob
+    byte[] attachment;
 }

@@ -17,6 +17,6 @@ class StudentController {
 
     @GetMapping
     public List<StudentDTO> getAllStudents() {
-        return studentService.getAllStudents();
+        return studentService.getAllStudentsNoAttachment();
     }
 }

@@ -16,8 +16,12 @@ public class StudentServiceImpl implements StudentService {
     private final StudentConverter studentConverter;
     @Override
     public List<StudentDTO> getAllStudents() {
-        return (List<StudentDTO>) studentRepository.findAll().stream()
+        return studentRepository.findAll().stream()
                 .map(studentConverter::convert)
                 .collect(Collectors.toList());
+    }
+
+    public List<StudentDTO> getAllStudentsNoAttachment() {
+        return studentRepository.findAllNoAttachment();
     }
 }
